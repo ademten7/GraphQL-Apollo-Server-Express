@@ -43,7 +43,7 @@ const typeDefs = gql`
   }
   type Mutation {
     addUser(name: String!, age: Int!): UserType
-    updateUser(name: String, age: Int): UserType
+    updateUser(id: ID, name: String, age: Int): UserType
     addProduct(title: String!, price: Int!, userId: ID): ProductType
   }
   type Subscription {

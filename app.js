@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const { ApolloServer, gql } = require("apollo-server-express");
 
 const mongoose = require("mongoose");
 const UsersCollection = require("./UserSchema");
@@ -16,8 +17,7 @@ Every GraphQL server (including Apollo Server) uses a schema to define the struc
 of data that clients can query. In this example, we'll create a server for querying
 a collection of users by products.
 */
-const { ApolloServer, gql } = require("apollo-server-express");
-const { assertType } = require("graphql");
+
 // A schema is a collection of type definitions (hence "typeDefs")
 // that together define the "shape" of queries that are executed against
 // your data.
@@ -121,9 +121,8 @@ server.start().then(() => {
   //Purpose??????
   server.applyMiddleware({ app });
 });
-// server
-//   .listen()
-//   .then(({ url }) => console.log(`apollo server is running:  ${url}`));
-
+// server.listen().then(({ url }) => {
+//   console.log(`🚀  Server ready at ${url}`);
+// });
 // The `listen` method launches a web server.
-app.listen(3000, () => console.log(`apollo server is running: 4000`));
+app.listen(4000, () => console.log(`apollo server is running: 4000`));

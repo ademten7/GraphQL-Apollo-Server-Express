@@ -7,9 +7,7 @@ const { Schema } = mongoose;
 const UserSchema = new Schema({
   name: { type: String, required: true },
   age: { type: Number, required: true },
-  products: [
-    { type: mongoose.Schema.Types.ObjectId, ref: "products", required: true },
-  ],
+  products: [{ type: mongoose.Schema.Types.ObjectId, ref: "products" }],
 });
 
 //this is a constructor thats why we use upper  case
